@@ -179,7 +179,12 @@ class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.select_related('student_class').all()
     serializer_class = StudentSerializer
     permission_classes = [IsAuthenticated]
-    filterset_fields = '__all__'
+    # Avoid ImageField in auto filter generation (breaks django-filter schema for Swagger)
+    filterset_fields = [
+        'fname', 'lname', 'father', 'gender', 'student_class', 'section',
+        'dob', 'phone', 'email', 'address', 'city', 'registration_code', 'reg_code_status',
+        'request_date', 'request_time', 'request', 'qrcode', 'latitude', 'longitude'
+    ]
     search_fields = ['fname', 'lname', 'registration_code']
     ordering_fields = '__all__'
     def get_serializer_context(self):
