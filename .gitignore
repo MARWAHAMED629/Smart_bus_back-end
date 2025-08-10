@@ -13,7 +13,7 @@ venv/
 ENV/
 *.log
 /media/
-/staticfiles/
+staticfiles/
 
 # VS Code / IDE
 .vscode/
@@ -32,6 +32,7 @@ node_modules/
 **/node_modules/
 .dist/
 build/
+school-transport-frontend/
 
 # OS
 .DS_Store
