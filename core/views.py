@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.decorators import action
@@ -20,6 +20,10 @@ from .serializers import (
 # Create your views here.
 def index(request):
     return HttpResponse("Welcome to School Transport API")
+
+# Health check endpoint
+def health(request):
+    return JsonResponse({"status": "ok"})
 
 class BusViewSet(viewsets.ModelViewSet):
     """

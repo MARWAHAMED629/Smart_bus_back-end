@@ -4,7 +4,7 @@ from .views import (
     BusViewSet, AdminViewSet, SupervisorViewSet, DriverViewSet, StudentViewSet, GuardianViewSet,
     AttendanceViewSet, AnnouncementViewSet, BusAssignmentViewSet, BusRouteViewSet, BusRoutePointViewSet,
     TripViewSet, TripStudentViewSet, FeedbackViewSet, MaintenanceLogViewSet, NotificationViewSet,
-    ReminderViewSet, GPSTrackingViewSet, ClassViewSet
+    ReminderViewSet, GPSTrackingViewSet, ClassViewSet, health
 )
 
 router = DefaultRouter()
@@ -29,5 +29,6 @@ router.register(r'gps-tracking', GPSTrackingViewSet)
 router.register(r'classes', ClassViewSet)
 
 urlpatterns = [
+    path('health/', health, name='health'),
     path('', include(router.urls)),
 ]
