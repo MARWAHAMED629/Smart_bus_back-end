@@ -1,5 +1,10 @@
 # 🚍 School Transport Management System
 
+link website on render 
+
+https://smart-bus-back-end.onrender.com/swagger/
+
+
 **Project Nexus – Backend Implementation with Django REST Framework**
 
 A smart, secure, and real-time platform for managing school transportation operations — from tracking buses to notifying parents — built as part of the **Project Nexus** professional development challenge.
